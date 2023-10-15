@@ -34,12 +34,15 @@ public class Board implements ActionListener {
    private ImageIcon oWin;
    
    /**
-    * Creates a new Board object with default values.
+    * Creates a new Board object with a specified number of rows and columns.
+    * 
+    * @param selectedRows Number of rows of tiles for the board.
+    * @param selectedCols Number of columns of tiles for the board.
     */
-   public Board() {
+   public Board(int selectedRows, int selectedCols) {
       turn = "X";
-      rows = StartMenu.getRows();
-      cols = StartMenu.getCols();
+      rows = selectedRows;
+      cols = selectedCols;
       boardFrame = new JFrame("New Game");
       boardPanel = new JPanel();
       boardFrame.setLayout(null);
@@ -47,7 +50,7 @@ public class Board implements ActionListener {
       boardFrame.add(boardPanel);
         
       // Placing all the tiles on the board.
-      tiles = new Tile[StartMenu.getRows()][StartMenu.getCols()];
+      tiles = new Tile[rows][cols];
       int x = 30;
       int y = 30;
       int frameWidth = x;
@@ -348,7 +351,7 @@ public class Board implements ActionListener {
          }
       }
       
-      // If the pause button is pressed, open the pause menu.
+      // If the pause button is clicked, open the pause menu.
       if(e.getSource() == pauseButton) {
          new PauseMenu();
       }

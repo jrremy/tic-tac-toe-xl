@@ -115,9 +115,10 @@ public class StartMenu implements ActionListener {
     */
    @Override
    public void actionPerformed(ActionEvent e) {
+      // If the start button is clicked, get rid of the start menu and create/open a new board passing in the values entered in rowsField and colsField.
       if(e.getSource() == startButton) {
-         Board game = new Board();
          startFrame.dispose();
+         new Board(getRows(), getCols());
       }        
    }
    

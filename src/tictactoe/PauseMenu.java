@@ -68,19 +68,23 @@ public class PauseMenu implements ActionListener {
     */
    @Override
    public void actionPerformed(ActionEvent e) {
+      // If the resume button is clicked, get rid of the pause menu.
       if(e.getSource() == resumeButton) {
          pauseFrame.dispose();
       }
+      // If the restart button is clicked, get rid of the board and the pause menu and create/open a new board passing in the values that were entered in rowsField and colsField in the start menu.
       if(e.getSource() == restartButton) {
          Board.getFrame().dispose();
          pauseFrame.dispose();
-         new Board();
+         new Board(StartMenu.getRows(), StartMenu.getCols());
       }
+      // If the main menu button is clicked, get rid of the board and the pause menu and create/open a new start menu.
       if(e.getSource() == mainMenuButton) {
          Board.getFrame().dispose();
          pauseFrame.dispose();
          new StartMenu();
       }
+      // If the quit button is clicked, terminate the program.
       if(e.getSource() == quitButton) {
          System.exit(0);
       }
