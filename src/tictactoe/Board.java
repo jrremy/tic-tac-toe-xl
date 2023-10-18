@@ -6,7 +6,6 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -18,7 +17,6 @@ import javax.swing.JButton;
  */
 public class Board implements ActionListener {
    private static JFrame boardFrame;
-   private JPanel boardPanel;
    private JButton pauseButton;
    private Tile[][] tiles;
    private int rows;
@@ -44,10 +42,8 @@ public class Board implements ActionListener {
       rows = selectedRows;
       cols = selectedCols;
       boardFrame = new JFrame("New Game");
-      boardPanel = new JPanel();
       boardFrame.setLayout(null);
       boardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      boardFrame.add(boardPanel);
         
       // Placing all the tiles on the board.
       tiles = new Tile[rows][cols];
