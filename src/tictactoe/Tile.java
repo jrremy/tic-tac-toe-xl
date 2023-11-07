@@ -1,4 +1,5 @@
 package tictactoe;
+
 import java.awt.Font;
 import javax.swing.JButton;
 
@@ -9,10 +10,10 @@ import javax.swing.JButton;
  */
 public class Tile {
    private JButton tileButton;
-   
+
    // The availability of the tile.
    private boolean used;
-   
+
    /**
     * Constructs a new Tile object with default values.
     */
@@ -20,13 +21,13 @@ public class Tile {
       tileButton = new JButton("");
       tileButton.setSize(60, 60);
       tileButton.setFocusPainted(false);
-      
+
       Font tileFont = new Font("Arial", Font.BOLD, 30);
       tileButton.setFont(tileFont);
-      
+
       used = false;
    }
-   
+
    /**
     * Gets the JButton of the tile.
     * 
@@ -35,7 +36,7 @@ public class Tile {
    public JButton getButton() {
       return tileButton;
    }
-   
+
    /**
     * Gets the text in the JButton of the tile.
     * 
@@ -44,7 +45,7 @@ public class Tile {
    public String getText() {
       return tileButton.getText();
    }
-   
+
    /**
     * Gets the availability of the tile.
     * 
@@ -53,7 +54,7 @@ public class Tile {
    public boolean getUsed() {
       return used;
    }
-   
+
    /**
     * Sets the availability of the tile.
     * 
@@ -61,5 +62,5 @@ public class Tile {
     */
    public void setUsed(boolean input) {
       used = input;
-   }     
+   }
 }
